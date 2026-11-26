@@ -1,0 +1,29 @@
+/* Cards (audience, setup), signals, legal band and contact. */
+.cards { list-style: none; display: grid; gap: 16px; }
+.cards-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.card { position: relative; display: grid; gap: 10px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; overflow: hidden; }
+.card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--accent); }
+.card p { color: var(--muted); }
+.accent-blue { --accent: var(--blue); --accent-soft: var(--blue-soft); }
+.accent-coral { --accent: var(--coral); --accent-soft: var(--coral-soft); }
+.accent-teal { --accent: var(--teal); --accent-soft: var(--teal-soft); }
+.accent-amber { --accent: var(--amber); --accent-soft: var(--amber-soft); }
+.accent-pink { --accent: var(--pink); --accent-soft: var(--pink-soft); }
+
+.num { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); color: var(--fg); font: 800 1rem var(--display); border: 2px solid var(--accent); }
+.setup-list + .note { margin-top: 24px; }
+
+.signals { margin-top: 28px; display: grid; gap: 14px; background: var(--ink-bg); color: var(--ink-text); border-radius: var(--radius); padding: 28px; }
+.signals ul { list-style: none; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.signals li { position: relative; padding-left: 26px; color: var(--ink-muted); }
+.signals li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 12px; height: 12px; border-radius: 4px; background: var(--coral); }
+
+.legal { background: var(--blue-soft); padding-block: 28px; }
+.legal-row { display: flex; gap: 18px; align-items: center; }
+.legal-badge { flex: none; background: var(--blue); color: var(--on-blue); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+@media (max-width: 640px) { .legal-row { flex-direction: column; align-items: flex-start; } }
+
+.contact { padding-block: clamp(56px, 9vw, 96px); }
+.contact-card { display: grid; gap: 18px; justify-items: start; }
+.contact-card > * { max-width: 760px; }
+.contact h2 { font-size: clamp(2rem, 5vw, 3.2rem); }

@@ -1,0 +1,41 @@
+/* Element defaults, type scale, buttons and small shared pieces. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 var(--body); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.4rem, 6.5vw, 4.2rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--link); }
+ul, ol { margin: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; }
+
+.eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 60ch; }
+.note { color: var(--muted); font-size: 0.95rem; max-width: 75ch; }
+.fine { font-size: 0.85rem; }
+
+.skip { position: absolute; left: 16px; top: -48px; background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px; z-index: 10; }
+.skip:focus { top: 12px; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid transparent; transition: transform 0.15s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--coral); color: var(--on-accent); }
+.btn-ghost { border-color: var(--fg); color: var(--fg); }
+.btn-small { min-height: 40px; padding: 0 16px; font-size: 0.92rem; background: var(--fg); color: var(--bg); }
+
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-weight: 600; font-size: 0.9rem; }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.dot-blue { background: var(--blue); }
+.dot-coral { background: var(--coral); }
+.dot-teal { background: var(--teal); }
+.dot-amber { background: var(--amber); }
+.dot-pink { background: var(--pink); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}

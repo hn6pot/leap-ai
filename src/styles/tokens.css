@@ -1,0 +1,60 @@
+/* The palette, named by role, with a dark-mode set. Components never hard-code a color. */
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --tint: #f3f1ec;
+  --fg: #17171c;
+  --muted: #55545f;
+  --line: #e4e2ea;
+  --blue: #2f5bff;
+  --blue-soft: #e5ebff;
+  --coral: #ff5a3c;
+  --coral-soft: #ffe7e1;
+  --teal: #00a88f;
+  --teal-soft: #d9f5ef;
+  --amber: #f5a300;
+  --amber-soft: #fff1cf;
+  --pink: #d6338f;
+  --pink-soft: #fbe2f0;
+  --on-accent: #17171c;
+  --on-blue: #ffffff;
+  --link: #2448d8;
+  --ink-bg: #17171c;
+  --ink-text: #ffffff;
+  --ink-muted: #c9c7d3;
+  --shadow: 0 24px 48px -24px rgb(23 23 28 / 30%);
+  --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body: "Manrope", "Helvetica Neue", system-ui, sans-serif;
+  --radius: 20px;
+  --radius-small: 12px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121218;
+    --surface: #1b1b24;
+    --tint: #17171f;
+    --fg: #f1f0f6;
+    --muted: #b0aec0;
+    --line: #2d2c3a;
+    --blue: #6f8cff;
+    --blue-soft: #1d2550;
+    --coral: #ff7a5f;
+    --coral-soft: #44201a;
+    --teal: #2fd1b5;
+    --teal-soft: #0f3a33;
+    --amber: #ffc23d;
+    --amber-soft: #3d2f0b;
+    --pink: #f062b0;
+    --pink-soft: #43182f;
+    --on-accent: #121218;
+    --on-blue: #121218;
+    --link: #93a8ff;
+    --ink-bg: #0b0b10;
+    --ink-text: #f1f0f6;
+    --ink-muted: #a6a4b5;
+    --shadow: 0 24px 48px -24px rgb(0 0 0 / 60%);
+    color-scheme: dark;
+  }
+}

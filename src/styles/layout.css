@@ -1,0 +1,22 @@
+/* Page frame: width, header, sections, footer. */
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+
+.site-header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.header-row { display: flex; align-items: center; gap: 24px; min-height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font: 800 1.2rem var(--display); color: var(--fg); text-decoration: none; }
+.nav { display: flex; gap: 22px; margin-left: auto; }
+.nav a { color: var(--fg); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+.nav a:hover { color: var(--coral); }
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .header-row .btn-small { margin-left: auto; }
+}
+
+[id] { scroll-margin-top: 72px; }
+.section { padding-block: clamp(56px, 9vw, 96px); }
+.section-tint { background: var(--tint); }
+.section-head { display: grid; gap: 14px; margin-bottom: 36px; max-width: 760px; }
+
+.site-footer { background: var(--ink-bg); color: var(--ink-muted); padding-block: 32px; }
+.site-footer strong { color: var(--ink-text); }
+.footer-row { display: grid; gap: 8px; }

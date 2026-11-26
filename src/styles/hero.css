@@ -1,0 +1,20 @@
+/* The opening promise and the hub diagram. */
+.hero { padding-block: clamp(40px, 7vw, 88px); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+.hero-text { display: grid; gap: 22px; }
+.hero h1 span { color: var(--coral); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+.hub { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.hub svg { width: 100%; height: auto; }
+.hub text { font-family: var(--body); font-weight: 700; font-size: 13px; text-anchor: middle; fill: var(--fg); }
+.hub .hub-label { font-size: 10px; letter-spacing: 0.12em; fill: var(--muted); }
+.hub-links path { fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 5; }
+.hub-tools rect { fill: var(--blue-soft); stroke: var(--blue); stroke-width: 1.5; }
+.hub-teams rect { fill: var(--teal-soft); stroke: var(--teal); stroke-width: 1.5; }
+.hub-extras rect { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1.5; }
+.hub-extras text, .hub-tools text, .hub-teams text { font-size: 12px; }
+.hub-ring { fill: var(--coral-soft); }
+.hub-core { fill: var(--coral); }
+.hub .hub-core-text { font-family: var(--display); font-size: 17px; font-weight: 800; fill: var(--on-accent); }
