@@ -24,9 +24,12 @@ export function build({ outDir, release, configPath = join(ROOT, "site.config.js
   const config = loadConfig(configPath, { release });
   const template = readFileSync(join(ROOT, "src", "page.html"), "utf8");
   const context = { site: { name: config.siteName, contactUrl: config.contactUrl, year } };
+  const partials = readPartials();
+  // Without a contact yet, the call to action reads "bientôt" instead of leading nowhere.
+  partials["contact-action"] = partials[config.contactUrl ? "contact-link" : "contact-soon"];
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
-  writeFileSync(join(outDir, "index.html"), renderTemplate(template, context, readPartials()));
+  writeFileSync(join(outDir, "index.html"), renderTemplate(template, context, partials));
   copyAssets(outDir);
 }
 

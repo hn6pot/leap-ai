@@ -27,6 +27,10 @@ test("the placeholder contact builds locally but not for release", () => {
   assert.throws(() => loadConfig(path, { release: true }), /placeholder/);
 });
 
+test("no contact yet (null) is accepted for release", () => {
+  assert.ok(loadConfig(configFile({ siteName: "Atelier", contactUrl: null }), { release: true }));
+});
+
 test("a trademark in the name is refused", () => {
   for (const siteName of ["Claude Conseil", "Atelier anthropic"]) {
     assert.throws(() => loadConfig(configFile({ siteName, contactUrl: "mailto:a@b.fr" }), { release: false }), /trademark/);
