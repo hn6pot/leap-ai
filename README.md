@@ -1,8 +1,8 @@
-# Consulting site
+# Leap AI site
 
 The one-page public site of a small consulting offer: helping small French companies and associations adopt Claude, from the first call to the 30-day review. The copy is in French.
 
-The name is provisional and lives in one place: `siteName` in `site.config.json`.
+The name (Leap AI) lives in one place: `siteName` in `site.config.json`.
 
 ## Build and preview
 

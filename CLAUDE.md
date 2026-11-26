@@ -15,7 +15,7 @@ A one-page static site, in French, that presents a small consulting offer: helpi
 
 ## The name
 
-- The name is provisional. It lives in **one place**: `siteName` in `site.config.json`. Never write it anywhere else.
+- The name (Leap AI) lives in **one place**: `siteName` in `site.config.json`. Never hard-code it in `src/`.
 - No trademark in our own name: no "Claude", no "Anthropic" (`load-config.mjs` refuses it). Both may appear in the copy, as the product we deploy.
 
 ## Public repository rules
