@@ -9,7 +9,7 @@ const TRADEMARKS = /claude|anthropic/i;
 
 /**
  * Reads site.config.json and checks it. Throws one Error naming every field at fault.
- * A release build also refuses the placeholder contact.
+ * contactUrl may be null (no contact yet); a release build refuses the placeholder one.
  * @param {string} path
  * @param {{ release: boolean }} options
  */
@@ -22,9 +22,10 @@ export function loadConfig(path, { release }) {
   } else if (TRADEMARKS.test(siteName)) {
     problems.push(`siteName: "${siteName}" must not contain a trademark (Claude, Anthropic)`);
   }
-  if (typeof contactUrl !== "string" || !CONTACT.test(contactUrl)) {
+  // null means no contact yet: the button reads "bientôt".
+  if (contactUrl !== null && (typeof contactUrl !== "string" || !CONTACT.test(contactUrl))) {
     problems.push(`contactUrl: "${contactUrl}" is not a mailto: address or a https://tally.so/r/… link`);
-  } else if (release && PLACEHOLDER.test(contactUrl)) {
+  } else if (contactUrl !== null && release && PLACEHOLDER.test(contactUrl)) {
     problems.push(`contactUrl: "${contactUrl}" is still the placeholder; put the real contact before release`);
   }
   if (problems.length > 0) {

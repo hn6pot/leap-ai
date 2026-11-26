@@ -33,6 +33,6 @@ A one-page static site, in French, that presents a small consulting offer: helpi
 
 ## Publishing
 
-- `npm run build -- --release` refuses the placeholder contact (`contactUrl` on `example.org`).
+- `contactUrl` may be `null` (the button reads « bientôt »); `npm run build -- --release` refuses a placeholder on `example.org`.
 - Nothing is pushed, and the GitHub repository is not created, without the owner's written yes.
 - Once on GitHub: one PR per change, merged by the owner after review. A merge on `main` publishes to GitHub Pages.

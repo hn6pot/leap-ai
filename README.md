@@ -22,11 +22,11 @@ Then open http://localhost:4173/.
 | Field | What goes there |
 |---|---|
 | `siteName` | The brand name, shown in the header, the title and the footer. No "Claude" or "Anthropic" (refused by the build). |
-| `contactUrl` | Where "Réserver un premier échange" leads: a `mailto:` address or a Tally share link (`https://tally.so/r/…`). It ships with a placeholder on `example.org`, which `npm run build -- --release` refuses. |
+| `contactUrl` | Where "Réserver un premier échange" leads: a `mailto:` address or a Tally share link (`https://tally.so/r/…`). `null` until there is one: the button then reads « bientôt ». A placeholder on `example.org` is refused by `npm run build -- --release`. |
 
 ## Publishing
 
-GitHub Actions (`.github/workflows/site.yml`) runs the tests and the `--release` build on every PR; a merge on `main` publishes to GitHub Pages (Settings › Pages › Source: "GitHub Actions"). The release build fails until `contactUrl` holds a real address.
+GitHub Actions (`.github/workflows/site.yml`) runs the tests and the `--release` build on every PR; a merge on `main` publishes to GitHub Pages (Settings › Pages › Source: "GitHub Actions").
 
 ## The code
 
