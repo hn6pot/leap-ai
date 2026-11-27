@@ -13,7 +13,6 @@ export const STYLESHEETS = [
   "hero.css",
   "sections.css",
   "journey.css",
-  "pricing.css",
 ];
 
 // The fonts the stylesheet names, served by the site itself (no Google Fonts request).
