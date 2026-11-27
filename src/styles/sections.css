@@ -1,16 +1,14 @@
 /* Audience, setup bento, legal card and contact panel. */
-.split { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
-.split-head { display: grid; gap: 16px; position: sticky; top: 110px; }
-@media (max-width: 860px) { .split { grid-template-columns: 1fr; } .split-head { position: static; } }
-
-.audiences { display: grid; }
-.audience { display: grid; gap: 6px; padding: 26px 0 26px 28px; border-bottom: 1px solid var(--line); position: relative; }
-.audience:first-child { padding-top: 0; }
-.audience::before { content: ""; position: absolute; left: 0; top: 34px; width: 12px; height: 12px; border-radius: 4px; background: var(--mark); transform: rotate(45deg); }
-.audience:first-child::before { top: 8px; }
-.audience h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); font-weight: 800; }
-.audience p { color: var(--muted); }
-.audience .audience-for { font-size: 0.88rem; font-weight: 600; color: var(--muted); opacity: 0.85; }
+.before-after { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; }
+.ba-card { display: grid; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(20px, 3vw, 28px); }
+.ba-card h3 { font-size: 1.3rem; font-weight: 800; }
+.ba-before, .ba-after { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: baseline; border-radius: var(--radius-small); padding: 12px 14px; }
+.ba-before { background: var(--rose-soft); color: var(--muted); }
+.ba-after { background: var(--mint-soft); color: var(--fg); font-weight: 600; }
+.ba-label { font-weight: 800; font-size: 0.85rem; }
+.ba-before .ba-label { color: var(--rose); }
+.ba-after .ba-label { color: var(--fg); }
+.ba-for { margin-top: 18px; }
 
 .signals { margin-top: clamp(40px, 6vw, 64px); display: grid; gap: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 4vw, 36px); }
 .signals ul { display: grid; gap: 12px 32px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
