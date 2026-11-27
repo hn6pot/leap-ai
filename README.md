@@ -1,6 +1,6 @@
 # Leap AI site
 
-The one-page public site of a small consulting offer: helping small French companies and associations adopt Claude, from the first call to the 30-day review. The copy is in French.
+The one-page public site of a small consulting offer: helping small French companies and associations adopt AI with Anthropic's tools, from the first call to the 30-day review. The copy is in French.
 
 The name (Leap AI) lives in one place: `siteName` in `site.config.json`.
 

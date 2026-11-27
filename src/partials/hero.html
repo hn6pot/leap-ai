@@ -1,17 +1,27 @@
 <section class="hero">
-      <div class="wrap hero-grid">
+      <svg class="hero-arc" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="leap" x1="0" x2="1" y1="1" y2="0">
+            <stop offset="0" stop-color="#8c80ff" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#8c80ff"/>
+            <stop offset="1" stop-color="#3be3b4"/>
+          </linearGradient>
+        </defs>
+        <path d="M-40 640 Q520 -180 1240 170" fill="none" vector-effect="non-scaling-stroke" stroke="url(#leap)" stroke-width="3"/>
+        <path d="M-40 680 Q560 -120 1240 230" fill="none" vector-effect="non-scaling-stroke" stroke="url(#leap)" stroke-width="1.5" stroke-dasharray="2 10" opacity="0.6"/>
+      </svg>
+      <div class="hero-grid">
         <div class="hero-text">
-          <p class="eyebrow">Conseil et accompagnement au changement</p>
-          <h1>Votre structure passe à Claude, <span>en quelques semaines.</span></h1>
-          <p class="lead">On installe Claude chez vous, on le branche sur vos outils et vos documents, on construit vos premiers automatismes, et on accompagne vos équipes jusqu'à ce qu'elles s'en servent seules.</p>
+          <h1>Votre structure passe à l'IA en quelques semaines.</h1>
+          <p class="hero-lead">On installe l'IA d'Anthropic chez vous, on la branche sur vos outils et vos documents, on construit vos premiers automatismes, et on accompagne vos équipes jusqu'à ce qu'elles s'en servent seules.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Réserver un premier échange</a>
-            <a class="btn btn-ghost" href="#formules">Voir les formules</a>
+            <a class="btn btn-mint" href="#contact">Réserver un premier échange</a>
+            <a class="btn btn-outline" href="#deroule">Voir le déroulé</a>
           </div>
-          <ul class="chips" aria-label="En bref">
-            <li class="chip"><i class="dot dot-blue"></i>PME et associations</li>
-            <li class="chip"><i class="dot dot-teal"></i>5 à 100 personnes</li>
-            <li class="chip"><i class="dot dot-amber"></i>Sur vos vrais documents</li>
+          <ul class="hero-facts">
+            <li>PME et associations</li>
+            <li>Petites structures</li>
+            <li>Vos process accélérés</li>
           </ul>
         </div>
         {{> hub-diagram}}

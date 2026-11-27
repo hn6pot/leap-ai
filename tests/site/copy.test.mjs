@@ -6,7 +6,7 @@ const html = buildWith(RELEASE_CONFIG, { release: true }).read("index.html");
 const text = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
 test("every section of the offer is on the page", () => {
-  for (const id of ["pour-qui", "installation", "deroule", "formules", "contact"]) {
+  for (const id of ["pour-qui", "installation", "deroule", "contact"]) {
     assert.match(html, new RegExp(`id="${id}"`), id);
   }
 });
@@ -18,11 +18,13 @@ test("we sell consulting and change management, never a training", () => {
   assert.match(text, /accompagnement au changement/i);
 });
 
-test("prices are starting prices, marked as indicative", () => {
-  assert.match(text, /à partir de 3\s000\s€\sHT/);
-  assert.match(text, /à partir de 6\s000\s€\sHT/);
-  assert.match(text, /Sur devis/);
-  assert.match(text, /Prix indicatifs/);
+test("the page shows no price", () => {
+  assert.doesNotMatch(text, /€|\bHT\b|tarif|formules?\b/i);
+});
+
+test("the copy speaks of AI and Anthropic, never of Claude", () => {
+  assert.doesNotMatch(html, /claude/i);
+  assert.match(text, /l'IA d'Anthropic/);
 });
 
 test("the journey has its four steps, in order", () => {

@@ -4,9 +4,9 @@ Applies to every session that touches this repository. The offer itself (audienc
 
 ## What it is
 
-A one-page static site, in French, that presents a small consulting offer: helping small, non-technical French companies and associations adopt Claude (organization setup, connectors, skills, MCP, team workshops, a light legal part).
+A one-page static site, in French, that presents a small consulting offer: helping small, non-technical French companies and associations adopt AI with Anthropic's tools (organization setup, connectors, skills, MCP, team workshops, a light legal part).
 
-**Positioning: consulting and change management, never "formation".** The page must not call what we sell a training (`tests/site/copy.test.mjs` checks it; "organismes de formation" as a client type is the only exception).
+**Positioning: consulting and change management, never "formation".** The copy speaks of AI in general and names Anthropic as the provider; it never names "Claude" and shows no price (`tests/site/copy.test.mjs`). The page must not call what we sell a training (`tests/site/copy.test.mjs` checks it; "organismes de formation" as a client type is the only exception).
 
 ## Language
 
@@ -16,7 +16,7 @@ A one-page static site, in French, that presents a small consulting offer: helpi
 ## The name
 
 - The name (Leap AI) lives in **one place**: `siteName` in `site.config.json`. Never hard-code it in `src/`.
-- No trademark in our own name: no "Claude", no "Anthropic" (`load-config.mjs` refuses it). Both may appear in the copy, as the product we deploy.
+- No trademark in our own name: no "Claude", no "Anthropic" (`load-config.mjs` refuses it).
 
 ## Public repository rules
 

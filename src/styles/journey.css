@@ -1,26 +1,18 @@
-/* The four-step journey: a colored track over the steps, vertical on phones. */
-.journey { list-style: none; position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-top: 30px; }
-.journey::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--blue) 0 25%, var(--coral) 25% 50%, var(--teal) 50% 75%, var(--amber) 75% 100%); }
-.step { position: relative; display: grid; gap: 8px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; }
-.step p { color: var(--muted); font-size: 0.95rem; }
-.step-num { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--step); color: var(--on-accent); font: 800 1.1rem var(--display); }
-.step-when { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-.step-blue { --step: var(--blue); }
-.step-blue .step-num { color: var(--on-blue); }
-.step-coral { --step: var(--coral); }
-.step-teal { --step: var(--teal); }
-.step-amber { --step: var(--amber); }
-.step::after { content: ""; position: absolute; top: -30px; left: 32px; width: 2px; height: 30px; background: var(--step); }
-
-.lanes { display: grid; gap: 6px; margin-top: 6px; }
-.lane { border-radius: 8px; padding: 6px 10px; font-weight: 700; font-size: 0.85rem; border-left: 5px solid; }
-.lane-pink { background: var(--pink-soft); border-color: var(--pink); }
-.lane-blue { background: var(--blue-soft); border-color: var(--blue); }
-
-.workshops { margin-top: 32px; display: grid; gap: 14px; }
-
+/* The four-step journey and the workshop list. */
+.journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; position: relative; counter-reset: step; }
+.journey::before { content: ""; position: absolute; top: 27px; left: 28px; right: 28px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--violet), var(--rose), var(--mint), var(--sun)); }
+.step { position: relative; display: grid; gap: 8px; align-content: start; }
+.step-num { position: relative; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: var(--surface); border: 4px solid var(--step); font: 800 1.5rem var(--display); margin-bottom: 10px; }
+.step-when { font-weight: 700; font-size: 0.9rem; color: var(--fg); }
+.step p:last-child { color: var(--muted); font-size: 0.97rem; }
 @media (max-width: 860px) {
-  .journey { grid-template-columns: 1fr; padding-top: 0; padding-left: 28px; }
-  .journey::before { top: 0; bottom: 0; left: 0; right: auto; width: 8px; height: auto; background: linear-gradient(180deg, var(--blue) 0 25%, var(--coral) 25% 50%, var(--teal) 50% 75%, var(--amber) 75% 100%); }
-  .step::after { top: 40px; left: -28px; width: 28px; height: 2px; }
+  .journey { grid-template-columns: 1fr; gap: 26px; }
+  .journey::before { top: 28px; bottom: 28px; left: 27px; right: auto; width: 4px; height: auto; background: linear-gradient(180deg, var(--violet), var(--rose), var(--mint), var(--sun)); }
+  .step { grid-template-columns: 58px 1fr; column-gap: 18px; }
+  .step-num { grid-row: span 3; margin-bottom: 0; }
 }
+
+.workshops { margin-top: clamp(48px, 7vw, 72px); display: grid; gap: 18px; }
+.workshop-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 10px; }
+.workshop-list li { display: grid; gap: 2px; background: var(--surface); border-radius: var(--radius-small); padding: 14px 18px; }
+.workshop-list span { color: var(--muted); font-size: 0.9rem; }

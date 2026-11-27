@@ -58,7 +58,7 @@ test("the name comes from the configuration only", () => {
 });
 
 test("the contact button leads to the configured contact", () => {
-  assert.match(html, /<a class="btn btn-primary" href="mailto:bonjour@cabinet-test\.fr">/);
+  assert.match(html, /<a class="btn btn-mint" href="mailto:bonjour@cabinet-test\.fr">/);
 });
 
 test("without a contact yet, the button says so and leads nowhere", () => {

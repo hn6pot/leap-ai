@@ -1,29 +1,50 @@
-/* Cards (audience, setup), signals, legal band and contact. */
-.cards { list-style: none; display: grid; gap: 16px; }
-.cards-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-.card { position: relative; display: grid; gap: 10px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; overflow: hidden; }
-.card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--accent); }
-.card p { color: var(--muted); }
-.accent-blue { --accent: var(--blue); --accent-soft: var(--blue-soft); }
-.accent-coral { --accent: var(--coral); --accent-soft: var(--coral-soft); }
-.accent-teal { --accent: var(--teal); --accent-soft: var(--teal-soft); }
-.accent-amber { --accent: var(--amber); --accent-soft: var(--amber-soft); }
-.accent-pink { --accent: var(--pink); --accent-soft: var(--pink-soft); }
+/* Audience, setup bento, legal card and contact panel. */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(20px, 4vw, 40px); }
+.stat { display: grid; gap: 8px; align-content: start; border-top: 4px solid var(--mark); padding-top: 18px; }
+.stat-figure { font: 800 clamp(2rem, 4.2vw, 2.8rem) / 1 var(--display); letter-spacing: -0.03em; color: var(--fg); }
+.stat p:not(.stat-figure) { color: var(--muted); }
+.stat .stat-source { font-size: 0.82rem; }
+.stat-source a { color: var(--muted); }
 
-.num { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); color: var(--fg); font: 800 1rem var(--display); border: 2px solid var(--accent); }
-.setup-list + .note { margin-top: 24px; }
+.examples { margin-top: clamp(40px, 6vw, 56px); display: grid; gap: 12px; }
+.examples ul { display: grid; gap: 8px; }
+.examples li { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.3fr); gap: 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.ex-before { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rose); }
+.ex-after { font-weight: 600; }
+.ex-after::before { content: "→ "; color: var(--mint); font-weight: 800; }
+@media (max-width: 720px) { .examples li { grid-template-columns: 1fr; gap: 2px; } }
 
-.signals { margin-top: 28px; display: grid; gap: 14px; background: var(--ink-bg); color: var(--ink-text); border-radius: var(--radius); padding: 28px; }
-.signals ul { list-style: none; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.signals li { position: relative; padding-left: 26px; color: var(--ink-muted); }
-.signals li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 12px; height: 12px; border-radius: 4px; background: var(--coral); }
+.signals { margin-top: clamp(40px, 6vw, 64px); display: grid; gap: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 4vw, 36px); }
+.signals ul { display: grid; gap: 12px 32px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.signals li { position: relative; padding-left: 32px; }
+.signals li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 20px; height: 20px; border-radius: 50%; background: var(--mint-soft); }
+.signals li::after { content: ""; position: absolute; left: 6px; top: calc(0.3em + 6px); width: 8px; height: 4px; border-left: 2px solid var(--mint); border-bottom: 2px solid var(--mint); transform: rotate(-45deg); }
 
-.legal { background: var(--blue-soft); padding-block: 28px; }
-.legal-row { display: flex; gap: 18px; align-items: center; }
-.legal-badge { flex: none; background: var(--blue); color: var(--on-blue); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
-@media (max-width: 640px) { .legal-row { flex-direction: column; align-items: flex-start; } }
+.bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.tile { display: grid; gap: 10px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); }
+.tile p { color: var(--muted); }
+.tile-wide { grid-column: span 2; }
+.tile-violet { background: var(--violet); border-color: transparent; color: var(--on-violet); }
+.tile-violet p { color: inherit; opacity: 0.88; }
+.tile-violet h3, .tile-mint h3, .tile-sun h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 800; }
+.tile-mint { background: var(--mint-soft); border-color: transparent; }
+.tile-sun { background: var(--sun-soft); border-color: transparent; }
+.tile-mint p, .tile-sun p { color: var(--fg); }
+@media (max-width: 860px) { .bento { grid-template-columns: 1fr; } .tile-wide { grid-column: auto; } }
+.bento + .note { margin-top: 22px; }
 
-.contact { padding-block: clamp(56px, 9vw, 96px); }
-.contact-card { display: grid; gap: 18px; justify-items: start; }
-.contact-card > * { max-width: 760px; }
-.contact h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
+.legal { padding-block: clamp(48px, 8vw, 96px) 0; }
+.legal-card { display: grid; grid-template-columns: 1fr 1.6fr; gap: 24px 48px; align-items: start; border-left: 6px solid var(--violet); padding: 8px 0 8px clamp(20px, 3vw, 36px); }
+.legal-title { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.legal-card p { color: var(--muted); font-size: 1.05rem; }
+.legal-card strong { color: var(--fg); }
+@media (max-width: 760px) { .legal-card { grid-template-columns: 1fr; } }
+
+.contact { padding-block: clamp(56px, 9vw, 104px) 0; }
+.contact-panel { margin-inline: 12px; border-radius: var(--radius-xl); color: var(--deep-fg); display: grid; gap: 22px; justify-items: center; text-align: center; padding: clamp(56px, 9vw, 112px) 24px;
+  background:
+    radial-gradient(50% 80% at 50% 120%, color-mix(in srgb, var(--mint) 35%, transparent), transparent 70%),
+    radial-gradient(40% 60% at 100% 0%, color-mix(in srgb, var(--violet) 50%, transparent), transparent 70%),
+    var(--deep); }
+.contact-panel h2 { font-size: clamp(2.2rem, 6vw, 4.2rem); }
+.contact-panel .hero-lead { max-width: 56ch; }
