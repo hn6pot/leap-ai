@@ -1,14 +1,18 @@
 /* Audience, setup bento, legal card and contact panel. */
-.before-after { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; }
-.ba-card { display: grid; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(20px, 3vw, 28px); }
-.ba-card h3 { font-size: 1.3rem; font-weight: 800; }
-.ba-before, .ba-after { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: baseline; border-radius: var(--radius-small); padding: 12px 14px; }
-.ba-before { background: var(--rose-soft); color: var(--muted); }
-.ba-after { background: var(--mint-soft); color: var(--fg); font-weight: 600; }
-.ba-label { font-weight: 800; font-size: 0.85rem; }
-.ba-before .ba-label { color: var(--rose); }
-.ba-after .ba-label { color: var(--fg); }
-.ba-for { margin-top: 18px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(20px, 4vw, 40px); }
+.stat { display: grid; gap: 8px; align-content: start; border-top: 4px solid var(--mark); padding-top: 18px; }
+.stat-figure { font: 800 clamp(2rem, 4.2vw, 2.8rem) / 1 var(--display); letter-spacing: -0.03em; color: var(--fg); }
+.stat p:not(.stat-figure) { color: var(--muted); }
+.stat .stat-source { font-size: 0.82rem; }
+.stat-source a { color: var(--muted); }
+
+.examples { margin-top: clamp(40px, 6vw, 56px); display: grid; gap: 12px; }
+.examples ul { display: grid; gap: 8px; }
+.examples li { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.3fr); gap: 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.ex-before { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rose); }
+.ex-after { font-weight: 600; }
+.ex-after::before { content: "→ "; color: var(--mint); font-weight: 800; }
+@media (max-width: 720px) { .examples li { grid-template-columns: 1fr; gap: 2px; } }
 
 .signals { margin-top: clamp(40px, 6vw, 64px); display: grid; gap: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 4vw, 36px); }
 .signals ul { display: grid; gap: 12px 32px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
